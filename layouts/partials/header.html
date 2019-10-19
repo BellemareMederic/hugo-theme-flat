@@ -1,4 +1,5 @@
-<header class="post-header">
+<header>
+    HEADER
     <h1 class="post-title">{{ .Title }}</h1>
     {{ if isset .Params "date" }}<p class="post-date">Posted <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>{{ end }}
 </header>

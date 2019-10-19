@@ -1,10 +1,33 @@
 <title>{{ .Title }} | {{ .Site.Title}} </title>
 <!-- Default Tag -->
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="{{ default "bonjour" ( .Description ) }}">
-<meta name="robots" content="index, follow" />
-<meta name="og:locale" content="{{ .Site.Language }}">
+
+{{ $publish := default true .Site.Params.searchEnginePublish }}
+
+{{ if $publish }}
+    <meta name="robots" content="index, follow" />
+{{ else }}
+    <meta name="robots" content="index, nofollow" />
+{{ end }}
+
+{{ if (fileExists "static/apple-touch-icon.png") -}}
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+{{ end -}}
+{{ if (fileExists "static/favicon-32x32.png") -}}
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+{{ end -}}
+{{ if (fileExists "static/favicon-16x16.png") -}}
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+{{ end -}}
+
+
 <!-- OG Tag -->
 <meta property="og:title" content="{{ default .Site.Title ( .Title )}}" />
+<meta property="og:locale" content="{{ .Site.Language }}">
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="{{ with .Resources.GetMatch "featuredImage" }}{{ .Permalink }}{{ end }}" />
+<link rel="stylesheet" href="css/style.css">
