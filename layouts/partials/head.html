@@ -1,0 +1,10 @@
+<title>{{ .Title }} | {{ .Site.Title}} </title>
+<!-- Default Tag -->
+<meta name="description" content="{{ default "bonjour" ( .Description ) }}">
+<meta name="robots" content="index, follow" />
+<meta name="og:locale" content="{{ .Site.Language }}">
+<!-- OG Tag -->
+<meta property="og:title" content="{{ default .Site.Title ( .Title )}}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="{{ with .Resources.GetMatch "featuredImage" }}{{ .Permalink }}{{ end }}" />
