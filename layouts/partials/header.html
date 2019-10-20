@@ -1,5 +1,12 @@
 <header>
-    HEADER
-    <h1 class="post-title">{{ .Title }}</h1>
-    {{ if isset .Params "date" }}<p class="post-date">Posted <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></p>{{ end }}
-</header>
+    <div class="container">
+        {{ if and (isset .Site.Params "logo") (fileExists .Site.Params.logo) }}
+            <h1 class="site-title">
+                <img src="{{ .Site.Params.logo }}" alt="">
+            </h1>
+        {{ else }}
+            <h1 class="site-title">{{ .Site.Title }}</h1>
+        {{ end }}
+        {{ partial "nav.html" . }}
+    </div>
+</header>    

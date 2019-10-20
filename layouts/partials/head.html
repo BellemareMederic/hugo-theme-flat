@@ -30,4 +30,7 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="{{ with .Resources.GetMatch "featuredImage" }}{{ .Permalink }}{{ end }}" />
-<link rel="stylesheet" href="css/style.css">
+
+<!-- {{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }} -->
+{{ $style := resources.Get "scss/style.scss" | toCSS | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">

@@ -1,0 +1,43 @@
+@import "simple-grid";
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    display: flex;
+    background-color:#fff;
+    @include box-shadow(1);
+    .container{
+        min-height: 4em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+nav{
+    .menu{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        .menu-item{
+            padding:0 0.5em;
+        }
+    }
+}
+
+main{
+    display: flex;
+    flex-grow: 1;
+    margin:2em 0;
+}
+
+footer{
+    @include box-shadow(2);
+    .container{
+        display: flex;
+        align-items: center;
+        min-height: 2em;
+    }
+}
