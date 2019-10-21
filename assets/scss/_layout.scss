@@ -16,6 +16,8 @@ header {
         align-items: center;
     }
 }
+
+/************* Menu section ************/
 nav{
     .menu{
         display: flex;
@@ -23,9 +25,37 @@ nav{
         flex-wrap: nowrap;
         .menu-item{
             padding:0 0.5em;
+            text-align: center;
+        }
+        .has-child{
+            position: relative;
+            cursor: pointer;
+            &:hover{
+                border-radius: 5px 5px 0 0;
+                & > .sub-menu{
+                    visibility: visible;
+                }
+            }
+        }
+        .sub-menu{
+            position: absolute;
+            top:150%;
+            left:-50%;
+            border-radius: 5px;
+            display: block;
+            visibility: hidden;
+            background-color:#fff;
+            border-bottom: 5px solid black;
+            @include box-shadow(5);
+            transition: visibility 0.8s;
+            .sub-menu-item a{
+                display: block;
+                padding: 1em 2em;
+            }
         }
     }
 }
+/*************** End Menu Section *************/
 
 main{
     display: flex;

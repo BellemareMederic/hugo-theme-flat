@@ -6,6 +6,13 @@ html, body, h1{
 h1{
   font-size:1.5em;
 }
+a{
+  text-decoration: none;
+  color: initial;
+  &:hover{
+    color:red;
+  }
+}
 
 .text-align{
     @each $type in 'left','right','center','justify' {

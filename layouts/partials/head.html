@@ -30,6 +30,7 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="{{ with .Resources.GetMatch "featuredImage" }}{{ .Permalink }}{{ end }}" />
+<meta name="twitter:card" content="summary" />
 
 <!-- {{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }} -->
 {{ $style := resources.Get "scss/style.scss" | toCSS | fingerprint }}
