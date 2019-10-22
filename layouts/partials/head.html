@@ -10,7 +10,7 @@
 {{ if $publish }}
     <meta name="robots" content="index, follow" />
 {{ else }}
-    <meta name="robots" content="index, nofollow" />
+    <meta name="robots" content="noindex, nofollow" />
 {{ end }}
 
 {{ if (fileExists "static/apple-touch-icon.png") -}}
